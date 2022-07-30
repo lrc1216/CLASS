@@ -10,15 +10,15 @@ secret = random.randint(1, 99)        #pick a secret number
 guess = 0
 tries = 0
 
-easygui.msgbox("""AHOY!  I'm the Dread Pirate Roberts, and I have a secret!
+easygui.msgbox("""AHOY!  I'm sun, and I have a secret!
 It is a number from 1 to 99.  I'll give you 6 tries.""")
 
 # keep trying until they guess it or run out of turns
 while guess != secret and tries < 6:
-    guess = easygui.integerbox("What's yer guess, baby?")  # get the guess
+    guess = easygui.integerbox("What's your guess, classmate?")  # get the guess
     if not guess: break
     if guess < secret:
-        easygui.msgbox(str(guess) + "it is too low, 笨蛋!")
+        easygui.msgbox(str(guess) + "it is too low, 小家伙!")
     elif guess > secret:
         easygui.msgbox(str(guess) + "it is too high, 运气真差!")
     tries = tries + 1                                       # used up one try
@@ -26,5 +26,5 @@ while guess != secret and tries < 6:
 if guess == secret:
     easygui.msgbox("Ye got it!  Found my secret, 真是幸运儿!")
 else:
-    easygui.msgbox("No more guesses!  Better luck next time, baby!")
+    easygui.msgbox("No more guesses!  Better luck next time, classmate!")
 
