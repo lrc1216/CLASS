@@ -14,14 +14,17 @@ easygui.msgbox("""AHOY!  I'm sun, and I have a secret!
 It is a number from 1 to 99.  I'll give you 6 tries.""")
 
 # keep trying until they guess it or run out of turns
-while guess != secret and tries < 6:
+# while guess != secret and tries < 6:
+for tries in range(6):
     guess = easygui.integerbox("What's your guess, classmate?")  # get the guess
     if not guess: break
     if guess < secret:
         easygui.msgbox(str(guess) + "it is too low, 小家伙!")
     elif guess > secret:
         easygui.msgbox(str(guess) + "it is too high, 运气真差!")
-    tries = tries + 1                                       # used up one try
+    elif guess == secret:
+        break
+    # tries = tries + 1                                       # used up one try
 
 if guess == secret:
     easygui.msgbox("Ye got it!  Found my secret, 真是幸运儿!")
